@@ -1,0 +1,40 @@
+@keyframes fadeIn {
+  0% {
+    top: 30px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes fadeInSpan {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes sliderText {
+  0% {
+    opacity: 0;
+    left: 40px
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+@keyframes widthInput {
+  0% {
+    width: 0;
+    
+  }
+  100% {
+    width: calc(100% - 21rem);
+    
+  }
+}
