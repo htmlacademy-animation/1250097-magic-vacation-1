@@ -48,6 +48,7 @@
   &:nth-child(2) {
     .slider__item-text {
       margin-top: 7.8rem;
+      
 
       @media (min-width: $stop-scaling) {
         margin-top: 78px;
@@ -95,6 +96,8 @@
   max-width: 34rem;
   font-size: 1.8rem;
   line-height: 2rem;
+  position: relative;
+  animation: sliderText 800ms ease-in;
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;
