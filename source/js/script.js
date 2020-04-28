@@ -23,6 +23,3 @@ result();
 form();
 social();
 headerDivision();
-
-
-
