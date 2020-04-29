@@ -1,8 +1,7 @@
 .form {
   position: relative;
   display: flex;
-  justify-content: flex-end;
-  // align-items: center;
+  align-items: center;
 }
 
 .form__label {
@@ -43,9 +42,11 @@
   color: $c-dark;
   border: 0;
   border-radius: 3rem;
-  position: relative;
-  animation: widthInput 500ms ease-in;
-  right: 0;
+  outline: none;
+
+  &:focus {
+    border: 1px solid $c-purple;
+  }
 
   @media (min-width: $stop-scaling) {
     margin-right: 30px;
@@ -78,7 +79,7 @@
 }
 
 .form__button {
-  // flex-grow: 1;
+  flex-grow: 1;
 
   @media (orientation: portrait) {
     position: relative;
