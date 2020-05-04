@@ -22,7 +22,6 @@ function getAnimateTitle(area) {
 }
 
 function dissectText(title, container) {
-
   const letters = [];
   for (let i = 0; i < title.length; i++) { // 3. расчленить на буквы
     letters.push(`<span style="animation-delay:${getRandomArbitrary(100, 1000)}ms">${title[i]}</span>`);
