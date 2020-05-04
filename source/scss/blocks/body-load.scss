@@ -14,9 +14,9 @@
   position: absolute;
   bottom: 0px;
   width: 100%;
-  background-color: #5f458c;
+  background-color: $c-dark;
   height: 0vh;
-  transition: height ease 2s;
+  transition: height ease 1s;
 } 
 
 #prizes.active{
@@ -24,6 +24,5 @@
 }
 #prizes.active ~.animate-block{
   height: 100vh;
- 
 }
 

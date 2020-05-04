@@ -24,11 +24,14 @@ function getAnimateTitle(area) {
 function dissectText(title, container) {
   const letters = [];
   for (let i = 0; i < title.length; i++) { // 3. расчленить на буквы
-    letters.push(`<span style="animation-delay:${getRandomArbitrary(100, 1000)}ms">${title[i]}</span>`);
+    const span = document.createElement(`span`);
+    span.style.animationDelay = `${getRandomArbitrary(100, 1000)}ms`;
+    span.textContent = `${title[i]}`;
+    letters.push(span);
   }
   container.textContent = ``;
   letters.forEach((span) => {
-    container.insertAdjacentHTML(`beforeend`, span);
+    container.append(span);
   });
 }
 
