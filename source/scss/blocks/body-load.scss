@@ -10,4 +10,19 @@
     bottom: 0;
   }
 }
-  
+.animate-block{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: $c-dark;
+  height: 0vh;
+  transition: height ease 1s;
+} 
+
+#prizes.active{
+  background-color: transparent;
+}
+#prizes.active ~.animate-block{
+  height: 100vh;
+}
+
