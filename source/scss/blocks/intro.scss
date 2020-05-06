@@ -33,7 +33,7 @@
   line-height: 0.906;
   letter-spacing: -0.04em;
   position: relative;
-  
+
 
   @media (min-width: $stop-scaling) {
     max-width: 990px;
@@ -53,12 +53,7 @@
     font-size: 5rem;
   }
 
-  span {
-    position: relative;
-    opacity: 0;
-    animation: fadeIn 1s ease-in-out 110ms;
-    animation-fill-mode: both
-  }
+
 }
 
 .intro__content {
@@ -126,7 +121,7 @@
   }
 
   p {
-    
+
     margin: 0;
   }
 

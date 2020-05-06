@@ -1,5 +1,5 @@
 import throttle from 'lodash/throttle';
-
+import headerDivision from "./header-division";
 export default class FullPageScroll {
   constructor() {
     this.THROTTLE_TIMEOUT = 2000;
@@ -25,6 +25,7 @@ export default class FullPageScroll {
     this.reCalculateActiveScreenPosition(evt.deltaY);
     if (currentPosition !== this.activeScreen) {
       this.changePageDisplay();
+      headerDivision();
     }
   }
 

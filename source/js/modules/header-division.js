@@ -25,7 +25,7 @@ function dissectText(title, container) {
   const letters = [];
   for (let i = 0; i < title.length; i++) { // 3. расчленить на буквы
     const span = document.createElement(`span`);
-    span.style.animationDelay = `${getRandomArbitrary(100, 1000)}ms`;
+    span.style.animationDelay = `${getRandomArbitrary(200, 500)}ms`;
     span.textContent = `${title[i]}`;
     letters.push(span);
   }
@@ -38,12 +38,47 @@ function dissectText(title, container) {
 function getRandomArbitrary(min, max) {
   return Math.round(Math.random() * (max - min) + min);
 }
+const ruleText = document.querySelector(`.rules__lead p`);
+const rulesList = document.querySelectorAll(`.rules__item`);
 
-window.addEventListener(`scroll`, headerDivision);
+ruleText.addEventListener(`animationend`, function () {
+  setTimeout(
+      function () {
+        addAnimationBlock(rulesList[0]);
+      }, 200
+  );
+});
+for (let i = 0; i < rulesList.length; i++) {
+  if (i >= 0 && i < (rulesList.length - 1)) {
+    rulesList[i].querySelector(`p`).addEventListener(`animationend`, function () {
+      setTimeout(
+          function () {
+            addAnimationBlock(rulesList[i + 1]);
+          }
+          , 100
+      );
+    });
+  }
+  if (i === rulesList.length - 1) {
+    rulesList[i].querySelector(`p`).addEventListener(`animationend`, function () {
+      const ruleLink = document.querySelector(`.rules__link`);
+      setTimeout(
+          function () {
+            addAnimationBlock(ruleLink);
+          }
+          , 200
+      );
+    });
+  }
+}
+
+function addAnimationBlock(element) {
+  element.classList.add(`active`);
+}
 // алгоритм
 // 1. определить видимую секцию
 // 2. найти в ней анимируемый тайтл
 // 3. расчленить на буквы
 // 4. засунуть буквы в спан
 // 5. каждому спану задать рандомную задержку
-// 6. привязаться к событию скрола (проверка: если видимая секция имеет тайтл который нужно анимировать и он не расчленен (спан) то повторить алгоритм)
+// 6. привязаться к событию скрола (full-page-scroll.js)
