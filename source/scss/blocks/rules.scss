@@ -169,7 +169,6 @@
     line-height: 5rem;
     text-align: center;
     transform: scale(0);
-    //animation: rulesItemFade 0.5s ease;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       top: 1rem;
@@ -192,7 +191,6 @@
     opacity: 0;
     margin: 0;
     position: relative;
-    //animation: sliderText 0.5s ease 0.5s both;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       min-height: calc(1.4rem * 2.2);

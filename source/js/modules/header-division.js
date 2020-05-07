@@ -1,4 +1,5 @@
-export default function headerDivision() {
+export const titles = document.querySelectorAll(`.intro__title, .slider__item-title, .prizes__title, .rules__title, .game__title`); // тайтлы которые должны иметь эфект
+export function headerDivision() {
   const screenSections = document.querySelectorAll(`.screen`); // все области
   getvisibleArea(screenSections);
 }
@@ -13,19 +14,20 @@ function getvisibleArea(areas) {
 }
 
 function getAnimateTitle(area) {
-  const titles = document.querySelectorAll(`.intro__title, .slider__item-title, .prizes__title, .rules__title, .game__title`); // тайтлы которые должны иметь эфект
   titles.forEach((title) => {
     if (area.contains(title)) { // 2. найти в ней анимируемый тайтл
-      dissectText(title.dataset.text, title);
+      title.classList.add(`active`);
+    } else {
+      title.classList.remove(`active`);
     }
   });
 }
 
-function dissectText(title, container) {
+export function dissectText(title, container) {
   const letters = [];
   for (let i = 0; i < title.length; i++) { // 3. расчленить на буквы
     const span = document.createElement(`span`);
-    span.style.animationDelay = `${getRandomArbitrary(200, 500)}ms`;
+    span.style.transition = `all 0.5s ease ${getRandomArbitrary(200, 500)}ms`;
     span.textContent = `${title[i]}`;
     letters.push(span);
   }

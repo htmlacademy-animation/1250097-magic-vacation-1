@@ -1,5 +1,5 @@
 import throttle from 'lodash/throttle';
-import headerDivision from "./header-division";
+import {headerDivision} from "./header-division";
 export default class FullPageScroll {
   constructor() {
     this.THROTTLE_TIMEOUT = 2000;
@@ -25,7 +25,6 @@ export default class FullPageScroll {
     this.reCalculateActiveScreenPosition(evt.deltaY);
     if (currentPosition !== this.activeScreen) {
       this.changePageDisplay();
-      headerDivision();
     }
   }
 
@@ -39,6 +38,7 @@ export default class FullPageScroll {
     this.changeVisibilityDisplay();
     this.changeActiveMenuItem();
     this.emitChangeDisplayEvent();
+
   }
 
   changeVisibilityDisplay() {
@@ -48,6 +48,7 @@ export default class FullPageScroll {
     });
     this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
     this.screenElements[this.activeScreen].classList.add(`active`);
+    setTimeout(headerDivision, 150);
   }
 
   changeActiveMenuItem() {

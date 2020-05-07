@@ -254,9 +254,8 @@
       width: 0;
       height: 2px;
       background-color: $c-light;
-      opacity: 0;
-      left: 0;
-      transition: background-color, width 500ms ease;
+      right: 0;
+      transition: background-color, width 300ms ease;
 
       @media (min-width: $stop-scaling) {
         left: -5px;
@@ -291,8 +290,9 @@
 
       &::after {
         width: 100%;
+        right: auto;
+        left: 0;
         background-color: $c-purple;
-        opacity: 1;
       }
     }
   }

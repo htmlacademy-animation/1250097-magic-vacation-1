@@ -10,12 +10,25 @@
     bottom: 0;
   }
 }
-.intro__title, .slider__item-title, .prizes__title, .rules__title, .game__title{
+.intro__title,
+.slider__item-title,
+.prizes__title,
+.rules__title,
+.game__title{
   span {
-    position: relative;
+    opacity: 0;
+    transform: translate3d(0, 1em, 0);
+    display: inline-block;
+  }
+}
+.intro__title.active,
+.slider__item-title.active,
+.prizes__title.active,
+.rules__title.active,
+.game__title.active {
+  span {
     opacity: 1;
-    animation: fadeIn 1s ease-in-out;
-    animation-fill-mode: both
+    transform: translate3d(0, 0, 0);
   }
 }
 .animate-block{
