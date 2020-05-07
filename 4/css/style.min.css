@@ -922,11 +922,11 @@ img {
 
 @keyframes fadeIn {
   0% {
-    top: 30px;
+    transform: translateY(30px);
     opacity: 0; }
   100% {
     opacity: 1;
-    top: 0; } }
+    transform: translateY(0); } }
 
 @keyframes fadeInSpan {
   0% {
@@ -937,10 +937,10 @@ img {
 @keyframes sliderText {
   0% {
     opacity: 0;
-    left: 40px; }
+    transform: translateX(40px); }
   100% {
     opacity: 1;
-    left: 0; } }
+    transform: translateX(0); } }
 
 @keyframes widthInput {
   0% {
@@ -1526,7 +1526,7 @@ img {
 
 .intro__title {
   margin: 0;
-  max-width: 99rem;
+  max-width: 100rem;
   text-transform: uppercase;
   font-family: "Radical", "Arial", sans-serif;
   font-weight: 400;
@@ -1864,9 +1864,8 @@ img {
       width: 0;
       height: 2px;
       background-color: #ffffff;
-      opacity: 0;
-      left: 0;
-      transition: background-color, width 500ms ease; }
+      right: 0;
+      transition: background-color, width 300ms ease; }
       @media (min-width: 2000px) {
         .page-header__menu a::after {
           left: -5px;
@@ -1890,8 +1889,9 @@ img {
       outline: none; }
       .page-header__menu a:hover::after, .page-header__menu a:focus::after {
         width: 100%;
-        background-color: #a67ee5;
-        opacity: 1; }
+        right: auto;
+        left: 0;
+        background-color: #a67ee5; }
 
 .page-header__social {
   margin-left: 4.8rem; }
@@ -3355,11 +3355,22 @@ img {
 .pageLoad .screen__footer {
   bottom: 0; }
 
-.intro__title span, .slider__item-title span, .prizes__title span, .rules__title span, .game__title span {
-  position: relative;
+.intro__title span,
+.slider__item-title span,
+.prizes__title span,
+.rules__title span,
+.game__title span {
+  opacity: 0;
+  transform: translate3d(0, 1em, 0);
+  display: inline-block; }
+
+.intro__title.active span,
+.slider__item-title.active span,
+.prizes__title.active span,
+.rules__title.active span,
+.game__title.active span {
   opacity: 1;
-  animation: fadeIn 1s ease-in-out;
-  animation-fill-mode: both; }
+  transform: translate3d(0, 0, 0); }
 
 .animate-block {
   position: absolute;

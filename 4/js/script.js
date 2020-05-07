@@ -10116,10 +10116,16 @@ module.exports = code;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _header_division__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header-division */ "./source/js/modules/header-division.js");
+
+
 /* harmony default export */ __webpack_exports__["default"] = (() => {
   window.addEventListener(`load`, addBodyClass);
   function addBodyClass() {
     document.querySelector(`body`).classList.add(`pageLoad`);
+    _header_division__WEBPACK_IMPORTED_MODULE_0__["titles"].forEach((title) => {
+      Object(_header_division__WEBPACK_IMPORTED_MODULE_0__["dissectText"])(title.dataset.text, title);
+    });
   }
 });
 
@@ -10322,7 +10328,6 @@ class FullPageScroll {
     this.reCalculateActiveScreenPosition(evt.deltaY);
     if (currentPosition !== this.activeScreen) {
       this.changePageDisplay();
-      Object(_header_division__WEBPACK_IMPORTED_MODULE_1__["default"])();
     }
   }
 
@@ -10336,6 +10341,7 @@ class FullPageScroll {
     this.changeVisibilityDisplay();
     this.changeActiveMenuItem();
     this.emitChangeDisplayEvent();
+
   }
 
   changeVisibilityDisplay() {
@@ -10345,6 +10351,7 @@ class FullPageScroll {
     });
     this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
     this.screenElements[this.activeScreen].classList.add(`active`);
+    setTimeout(_header_division__WEBPACK_IMPORTED_MODULE_1__["headerDivision"], 150);
   }
 
   changeActiveMenuItem() {
@@ -10383,12 +10390,15 @@ class FullPageScroll {
 /*!**********************************************!*\
   !*** ./source/js/modules/header-division.js ***!
   \**********************************************/
-/*! exports provided: default */
+/*! exports provided: titles, headerDivision, dissectText */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return headerDivision; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "titles", function() { return titles; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerDivision", function() { return headerDivision; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dissectText", function() { return dissectText; });
+const titles = document.querySelectorAll(`.intro__title, .slider__item-title, .prizes__title, .rules__title, .game__title`); // тайтлы которые должны иметь эфект
 function headerDivision() {
   const screenSections = document.querySelectorAll(`.screen`); // все области
   getvisibleArea(screenSections);
@@ -10404,10 +10414,11 @@ function getvisibleArea(areas) {
 }
 
 function getAnimateTitle(area) {
-  const titles = document.querySelectorAll(`.intro__title, .slider__item-title, .prizes__title, .rules__title, .game__title`); // тайтлы которые должны иметь эфект
   titles.forEach((title) => {
     if (area.contains(title)) { // 2. найти в ней анимируемый тайтл
-      dissectText(title.dataset.text, title);
+      title.classList.add(`active`);
+    } else {
+      title.classList.remove(`active`);
     }
   });
 }
@@ -10416,7 +10427,7 @@ function dissectText(title, container) {
   const letters = [];
   for (let i = 0; i < title.length; i++) { // 3. расчленить на буквы
     const span = document.createElement(`span`);
-    span.style.animationDelay = `${getRandomArbitrary(200, 500)}ms`;
+    span.style.transition = `all 0.5s ease ${getRandomArbitrary(200, 500)}ms`;
     span.textContent = `${title[i]}`;
     letters.push(span);
   }
@@ -10720,11 +10731,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_form_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/form.js */ "./source/js/modules/form.js");
 /* harmony import */ var _modules_social_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/social.js */ "./source/js/modules/social.js");
 /* harmony import */ var _modules_full_page_scroll__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/full-page-scroll */ "./source/js/modules/full-page-scroll.js");
-/* harmony import */ var _modules_header_division__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/header-division */ "./source/js/modules/header-division.js");
-/* harmony import */ var _modules_bodyEvt_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/bodyEvt.js */ "./source/js/modules/bodyEvt.js");
+/* harmony import */ var _modules_bodyEvt_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/bodyEvt.js */ "./source/js/modules/bodyEvt.js");
 // modules
-
-
 
 
 
@@ -10737,9 +10745,8 @@ __webpack_require__.r(__webpack_exports__);
 
 const fullPageScroll = new _modules_full_page_scroll__WEBPACK_IMPORTED_MODULE_8__["default"]();
 fullPageScroll.init();
-
 // init modules
-Object(_modules_bodyEvt_js__WEBPACK_IMPORTED_MODULE_10__["default"])();
+Object(_modules_bodyEvt_js__WEBPACK_IMPORTED_MODULE_9__["default"])();
 Object(_modules_mobile_height_adjust_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
 Object(_modules_slider_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
 Object(_modules_menu_js__WEBPACK_IMPORTED_MODULE_2__["default"])();
@@ -10748,7 +10755,6 @@ Object(_modules_chat_js__WEBPACK_IMPORTED_MODULE_4__["default"])();
 Object(_modules_result_js__WEBPACK_IMPORTED_MODULE_5__["default"])();
 Object(_modules_form_js__WEBPACK_IMPORTED_MODULE_6__["default"])();
 Object(_modules_social_js__WEBPACK_IMPORTED_MODULE_7__["default"])();
-Object(_modules_header_division__WEBPACK_IMPORTED_MODULE_9__["default"])();
 
 
 /***/ }),
