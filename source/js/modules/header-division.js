@@ -27,7 +27,7 @@ export function dissectText(title, container) {
   const letters = [];
   for (let i = 0; i < title.length; i++) { // 3. расчленить на буквы
     const span = document.createElement(`span`);
-    span.style.transition = `all 0.5s ease ${getRandomArbitrary(200, 500)}ms`;
+    span.style.transition = `all 0.3s cubic-bezier(0.16, 1, 0.3, 1) ${getRandomArbitrary(200, 500)}ms`;
     span.textContent = `${title[i]}`;
     letters.push(span);
   }

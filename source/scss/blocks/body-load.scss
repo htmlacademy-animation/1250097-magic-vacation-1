@@ -10,25 +10,30 @@
     bottom: 0;
   }
 }
-.intro__title,
-.slider__item-title,
-.prizes__title,
-.rules__title,
-.game__title{
-  span {
-    opacity: 0;
-    transform: translate3d(0, 1em, 0);
-    display: inline-block;
+.intro,
+.slider,
+.prizes,
+.rules,
+.game{
+  &__title, &__item-title{
+    span {
+      opacity: 0;
+      transform: translate3d(0, 1em, 0);
+      display: inline-block;
+    }
   }
 }
-.intro__title.active,
-.slider__item-title.active,
-.prizes__title.active,
-.rules__title.active,
-.game__title.active {
-  span {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
+
+.intro,
+.slider,
+.prizes,
+.rules,
+.game {
+  &__title.active, &__item-title.active{
+    span {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
   }
 }
 .animate-block{

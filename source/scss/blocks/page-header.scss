@@ -135,7 +135,6 @@
   align-items: center;
   opacity: 0;
   transition: opacity 300ms cubic-bezier(.04,.64,.81,.85);
-
   @media (max-width: $tablet) and (orientation: portrait) {
     position: fixed;
     top: 0;
@@ -255,12 +254,7 @@
       height: 2px;
       background-color: $c-light;
       right: 0;
-      transition: background-color, width 300ms ease;
-
-      @media (min-width: $stop-scaling) {
-        left: -5px;
-        right: -5px;
-      }
+      transition: all 300ms ease;
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
