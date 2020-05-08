@@ -10,6 +10,32 @@
     bottom: 0;
   }
 }
+.intro,
+.slider,
+.prizes,
+.rules,
+.game{
+  &__title, &__item-title{
+    span {
+      opacity: 0;
+      transform: translate3d(0, 1em, 0);
+      display: inline-block;
+    }
+  }
+}
+
+.intro,
+.slider,
+.prizes,
+.rules,
+.game {
+  &__title.active, &__item-title.active{
+    span {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
 .animate-block{
   position: absolute;
   bottom: 0px;
@@ -17,7 +43,7 @@
   background-color: $c-dark;
   height: 0vh;
   transition: height ease 1s;
-} 
+}
 
 #prizes.active{
   background-color: transparent;

@@ -25,7 +25,7 @@
 
 .intro__title {
   margin: 0;
-  max-width: 99rem;
+  max-width: 100rem;
   text-transform: uppercase;
   font-family: $font-alt;
   font-weight: 400;
@@ -33,7 +33,7 @@
   line-height: 0.906;
   letter-spacing: -0.04em;
   position: relative;
-  
+
 
   @media (min-width: $stop-scaling) {
     max-width: 990px;
@@ -51,13 +51,6 @@
 
   @media (max-width: $mobile) and (orientation: landscape) {
     font-size: 5rem;
-  }
-
-  span {
-    position: relative;
-    opacity: 0;
-    animation: fadeIn 1s ease-in-out 110ms;
-    animation-fill-mode: both
   }
 }
 
@@ -126,7 +119,6 @@
   }
 
   p {
-    
     margin: 0;
   }
 

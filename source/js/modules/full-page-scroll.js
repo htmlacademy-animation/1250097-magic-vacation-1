@@ -1,4 +1,5 @@
 import throttle from 'lodash/throttle';
+import {headerDivision} from "./header-division";
 
 export default class FullPageScroll {
   constructor() {
@@ -46,6 +47,7 @@ export default class FullPageScroll {
     });
     this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
     this.screenElements[this.activeScreen].classList.add(`active`);
+    setTimeout(headerDivision, 150);
   }
 
   changeActiveMenuItem() {

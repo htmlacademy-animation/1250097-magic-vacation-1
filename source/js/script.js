@@ -8,7 +8,6 @@ import result from './modules/result.js';
 import form from './modules/form.js';
 import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
-import headerDivision from './modules/header-division';
 import bodyEvt from './modules/bodyEvt.js';
 
 const fullPageScroll = new FullPageScroll();
@@ -24,4 +23,3 @@ chat();
 result();
 form();
 social();
-headerDivision();
