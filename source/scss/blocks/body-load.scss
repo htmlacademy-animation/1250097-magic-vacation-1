@@ -15,11 +15,12 @@
 .prizes,
 .rules,
 .game{
-  &__title, &__item-title{
+  &__title, &__item-title, &__date{
     span {
       opacity: 0;
       transform: translate3d(0, 1em, 0);
       display: inline-block;
+      will-change: transform;
     }
   }
 }
@@ -29,7 +30,7 @@
 .prizes,
 .rules,
 .game {
-  &__title.active, &__item-title.active{
+  &__title.active, &__item-title.active, &__date.active{
     span {
       opacity: 1;
       transform: translate3d(0, 0, 0);

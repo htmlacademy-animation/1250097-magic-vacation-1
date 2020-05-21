@@ -1,4 +1,4 @@
-export const titles = document.querySelectorAll(`.intro__title, .slider__item-title, .prizes__title, .rules__title, .game__title`); // тайтлы которые должны иметь эфект
+export const titles = document.querySelectorAll(`.intro__title, .slider__item-title, .prizes__title, .rules__title, .game__title, .intro__date`); // тайтлы которые должны иметь эфект
 export function headerDivision() {
   const screenSections = document.querySelectorAll(`.screen`); // все области
   getvisibleArea(screenSections);
@@ -22,21 +22,24 @@ function getAnimateTitle(area) {
     }
   });
 }
-
 export function dissectText(title, container) {
-  const letters = [];
-  for (let i = 0; i < title.length; i++) { // 3. расчленить на буквы
-    const span = document.createElement(`span`);
-    span.style.transition = `all 0.3s cubic-bezier(0.16, 1, 0.3, 1) ${getRandomArbitrary(200, 500)}ms`;
-    span.textContent = `${title[i]}`;
-    letters.push(span);
-  }
   container.textContent = ``;
-  letters.forEach((span) => {
+  const titleArray = title.split(` `);
+  for (let i = 0; i < titleArray.length; i++) {
+    let leters = [];
+    const span = document.createElement(`span`);
+    for (let j = 0; j < titleArray[i].length; j++) {
+      const spanLeter = document.createElement(`span`);
+      spanLeter.style.transition = `all 0.3s cubic-bezier(0.16, 1, 0.3, 1) ${getRandomArbitrary(200, 500)}ms`;
+      spanLeter.textContent = `${titleArray[i][j]}`;
+      leters.push(spanLeter);
+    }
+    leters.forEach((thisSpan) => {
+      span.append(thisSpan);
+    });
     container.append(span);
-  });
+  }
 }
-
 function getRandomArbitrary(min, max) {
   return Math.round(Math.random() * (max - min) + min);
 }
