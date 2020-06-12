@@ -1,4 +1,4 @@
-﻿export class TitleAnimation {
+export class TitleAnimations {
   constructor(titles) {
     this.titles = titles;
     this.screenSection = document.querySelectorAll(`.screen`);
@@ -8,6 +8,7 @@
       this.dissectText(title.dataset.text, title);
     });
   }
+
   dissectText(title, container) {
     container.textContent = ``;
     const titleArray = title.split(` `);
