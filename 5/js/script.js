@@ -10694,13 +10694,13 @@ __webpack_require__.r(__webpack_exports__);
 /*!**********************************************!*\
   !*** ./source/js/modules/title-animation.js ***!
   \**********************************************/
-/*! exports provided: TitleAnimations */
+/*! exports provided: TitleAnimation */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TitleAnimations", function() { return TitleAnimations; });
-class TitleAnimations {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TitleAnimation", function() { return TitleAnimation; });
+class TitleAnimation {
   constructor(titles) {
     this.titles = titles;
     this.screenSection = document.querySelectorAll(`.screen`);
