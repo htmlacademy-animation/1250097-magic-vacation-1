@@ -1,11 +1,11 @@
-import {dissectText, titles} from "./header-division";
+import {titles} from "./active-title";
+import {TitleAnimation} from "./title-animation";
 
 export default () => {
   window.addEventListener(`load`, addBodyClass);
   function addBodyClass() {
     document.querySelector(`body`).classList.add(`pageLoad`);
-    titles.forEach((title) => {
-      dissectText(title.dataset.text, title);
-    });
+    const animate = new TitleAnimation(titles);
+    animate.init();
   }
 };

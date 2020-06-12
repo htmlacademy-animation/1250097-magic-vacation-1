@@ -16,11 +16,16 @@
 .rules,
 .game{
   &__title, &__item-title, &__date{
-    span {
+    .span-leter {
       opacity: 0;
       transform: translate3d(0, 1em, 0);
       display: inline-block;
       will-change: transform;
+    }
+    .first-span {
+      overflow: hidden;
+      display: inline-block;
+      transform: none;
     }
   }
 }
@@ -31,9 +36,9 @@
 .rules,
 .game {
   &__title.active, &__item-title.active, &__date.active{
-    span {
+    .span-leter {
       opacity: 1;
-      transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 6px, 0);
     }
   }
 }
