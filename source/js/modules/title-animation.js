@@ -1,4 +1,4 @@
-export class TitleAnimations {
+export class TitleAnimation {
   constructor(titles) {
     this.titles = titles;
     this.screenSection = document.querySelectorAll(`.screen`);
