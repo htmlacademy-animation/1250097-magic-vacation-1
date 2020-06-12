@@ -1,14 +1,13 @@
 @keyframes fadeIn {
   0% {
-    top: 30px;
+    transform: translateY(30px);
     opacity: 0;
   }
   100% {
     opacity: 1;
-    top: 0;
+    transform: translateY(0);
   }
-}
-
+}//для текстовых блоков
 @keyframes fadeInSpan {
   0% {
     opacity: 0;
@@ -16,25 +15,51 @@
   100% {
     opacity: 1;
   }
-}
-
+} // для заголовков
 @keyframes sliderText {
   0% {
     opacity: 0;
-    left: 40px
+    transform: translateX(40px)
   }
   100% {
     opacity: 1;
-    left: 0;
+    transform: translateX(0)
   }
-}
+} //для текстовых блоков слайдера
 @keyframes widthInput {
   0% {
     width: 0;
-    
+
   }
   100% {
     width: calc(100% - 21rem);
-    
+
   }
+}//для input в разделе "Игра"
+@keyframes rulesItemFade {
+  0%{
+    color: transparent;
+    transform: scale(0.3);
+    animation-timing-function: cubic-bezier(.6,-0.25,.1,1.82);
+  }
+  100%{
+    color: white;
+    transform: scale(1);
+
+  }
+}
+@keyframes btnRuleLink {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  50%{
+    color: $c-light;
+  }
+  100%{
+    width: 100%;
+    color: $c-dark;
+    opacity: 1
+  }
+
 }

@@ -96,7 +96,8 @@
   max-width: 34rem;
   font-size: 1.8rem;
   line-height: 2rem;
-
+  position: relative;
+  animation: sliderText 800ms ease-in;
   @media (min-width: $stop-scaling) {
     margin-top: 36px;
     max-width: 340px;
