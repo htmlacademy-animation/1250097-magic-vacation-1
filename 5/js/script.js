@@ -10107,6 +10107,84 @@ module.exports = code;
 
 /***/ }),
 
+/***/ "./source/js/modules/active-title.js":
+/*!*******************************************!*\
+  !*** ./source/js/modules/active-title.js ***!
+  \*******************************************/
+/*! exports provided: titles, headerDivision */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "titles", function() { return titles; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerDivision", function() { return headerDivision; });
+const titles = document.querySelectorAll(`[data-text]`);
+function headerDivision() {
+  const screenSections = document.querySelectorAll(`.screen`); // все области
+  getvisibleArea(screenSections);
+}
+function getvisibleArea(areas) {
+  areas.forEach((section) => {
+    if (!section.classList.contains(`screen--hidden`)) { // 1. определить видимую секцию
+      getAnimateTitle(section);
+    }
+  });
+}
+function getAnimateTitle(area) {
+  titles.forEach((title) => {
+    if (area.contains(title)) { // 2. найти в ней анимируемый тайтл
+      title.classList.add(`active`);
+    } else {
+      title.classList.remove(`active`);
+    }
+  });
+}
+
+
+const ruleText = document.querySelector(`.rules__lead p`);
+const rulesList = document.querySelectorAll(`.rules__item`);
+
+ruleText.addEventListener(`animationend`, function () {
+  setTimeout(
+      function () {
+        addAnimationBlock(rulesList[0]);
+      }, 200
+  );
+});
+
+for (let i = 0; i < rulesList.length - 1; i++) {
+  rulesList[i].querySelector(`p`).addEventListener(`animationend`, function () {
+    setTimeout(
+        function () {
+          addAnimationBlock(rulesList[i + 1]);
+        }
+        , 100
+    );
+  });
+}
+rulesList[rulesList.length - 1].querySelector(`p`).addEventListener(`animationend`, function () {
+  const ruleLink = document.querySelector(`.rules__link`);
+  setTimeout(
+      function () {
+        addAnimationBlock(ruleLink);
+      }, 200
+  );
+});
+
+function addAnimationBlock(element) {
+  element.classList.add(`active`);
+}
+// алгоритм
+// 1. определить видимую секцию
+// 2. найти в ней анимируемый тайтл
+// 3. расчленить на буквы
+// 4. засунуть буквы в спан
+// 5. каждому спану задать рандомную задержку
+// 6. привязаться к событию скрола (full-page-scroll.js)
+
+
+/***/ }),
+
 /***/ "./source/js/modules/bodyEvt.js":
 /*!**************************************!*\
   !*** ./source/js/modules/bodyEvt.js ***!
@@ -10116,16 +10194,17 @@ module.exports = code;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _header_division__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header-division */ "./source/js/modules/header-division.js");
+/* harmony import */ var _active_title__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./active-title */ "./source/js/modules/active-title.js");
+/* harmony import */ var _title_animation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./title-animation */ "./source/js/modules/title-animation.js");
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = (() => {
   window.addEventListener(`load`, addBodyClass);
   function addBodyClass() {
     document.querySelector(`body`).classList.add(`pageLoad`);
-    _header_division__WEBPACK_IMPORTED_MODULE_0__["titles"].forEach((title) => {
-      Object(_header_division__WEBPACK_IMPORTED_MODULE_0__["dissectText"])(title.dataset.text, title);
-    });
+    const animate = new _title_animation__WEBPACK_IMPORTED_MODULE_1__["TitleAnimation"](_active_title__WEBPACK_IMPORTED_MODULE_0__["titles"]);
+    animate.init();
   }
 });
 
@@ -10300,7 +10379,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return FullPageScroll; });
 /* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash/throttle */ "./node_modules/lodash/throttle.js");
 /* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_throttle__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _header_division__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header-division */ "./source/js/modules/header-division.js");
+/* harmony import */ var _active_title__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./active-title */ "./source/js/modules/active-title.js");
 
 
 
@@ -10319,7 +10398,6 @@ class FullPageScroll {
   init() {
     document.addEventListener(`wheel`, lodash_throttle__WEBPACK_IMPORTED_MODULE_0___default()(this.onScrollHandler, this.THROTTLE_TIMEOUT, {trailing: true}));
     window.addEventListener(`popstate`, this.onUrlHashChengedHandler);
-
     this.onUrlHashChanged();
   }
 
@@ -10351,7 +10429,8 @@ class FullPageScroll {
     });
     this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
     this.screenElements[this.activeScreen].classList.add(`active`);
-    setTimeout(_header_division__WEBPACK_IMPORTED_MODULE_1__["headerDivision"], 150);
+
+    setTimeout(_active_title__WEBPACK_IMPORTED_MODULE_1__["headerDivision"], 150);
   }
 
   changeActiveMenuItem() {
@@ -10382,111 +10461,6 @@ class FullPageScroll {
     }
   }
 }
-
-
-/***/ }),
-
-/***/ "./source/js/modules/header-division.js":
-/*!**********************************************!*\
-  !*** ./source/js/modules/header-division.js ***!
-  \**********************************************/
-/*! exports provided: titles, headerDivision, dissectText */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "titles", function() { return titles; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerDivision", function() { return headerDivision; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dissectText", function() { return dissectText; });
-const titles = document.querySelectorAll(`.intro__title, .slider__item-title, .prizes__title, .rules__title, .game__title, .intro__date`); // тайтлы которые должны иметь эфект
-function headerDivision() {
-  const screenSections = document.querySelectorAll(`.screen`); // все области
-  getvisibleArea(screenSections);
-}
-
-
-function getvisibleArea(areas) {
-  areas.forEach((section) => {
-    if (!section.classList.contains(`screen--hidden`)) { // 1. определить видимую секцию
-      getAnimateTitle(section);
-    }
-  });
-}
-
-function getAnimateTitle(area) {
-  titles.forEach((title) => {
-    if (area.contains(title)) { // 2. найти в ней анимируемый тайтл
-      title.classList.add(`active`);
-    } else {
-      title.classList.remove(`active`);
-    }
-  });
-}
-function dissectText(title, container) {
-  container.textContent = ``;
-  const titleArray = title.split(` `);
-  for (let i = 0; i < titleArray.length; i++) {
-    let leters = [];
-    const span = document.createElement(`span`);
-    for (let j = 0; j < titleArray[i].length; j++) {
-      const spanLeter = document.createElement(`span`);
-      spanLeter.style.transition = `all 0.3s cubic-bezier(0.16, 1, 0.3, 1) ${getRandomArbitrary(200, 500)}ms`;
-      spanLeter.textContent = `${titleArray[i][j]}`;
-      leters.push(spanLeter);
-    }
-    leters.forEach((thisSpan) => {
-      span.append(thisSpan);
-    });
-    container.append(span);
-  }
-}
-function getRandomArbitrary(min, max) {
-  return Math.round(Math.random() * (max - min) + min);
-}
-const ruleText = document.querySelector(`.rules__lead p`);
-const rulesList = document.querySelectorAll(`.rules__item`);
-
-ruleText.addEventListener(`animationend`, function () {
-  setTimeout(
-      function () {
-        addAnimationBlock(rulesList[0]);
-      }, 200
-  );
-});
-for (let i = 0; i < rulesList.length; i++) {
-  if (i >= 0 && i < (rulesList.length - 1)) {
-    rulesList[i].querySelector(`p`).addEventListener(`animationend`, function () {
-      setTimeout(
-          function () {
-            addAnimationBlock(rulesList[i + 1]);
-          }
-          , 100
-      );
-    });
-  }
-  if (i === rulesList.length - 1) {
-    rulesList[i].querySelector(`p`).addEventListener(`animationend`, function () {
-      const ruleLink = document.querySelector(`.rules__link`);
-      setTimeout(
-          function () {
-            addAnimationBlock(ruleLink);
-          }
-          , 200
-      );
-    });
-  }
-}
-
-function addAnimationBlock(element) {
-  element.classList.add(`active`);
-}
-// алгоритм
-// 1. определить видимую секцию
-// 2. найти в ней анимируемый тайтл
-// 3. расчленить на буквы
-// 4. засунуть буквы в спан
-// 5. каждому спану задать рандомную задержку
-// 6. привязаться к событию скрола (full-page-scroll.js)
 
 
 /***/ }),
@@ -10712,6 +10686,56 @@ __webpack_require__.r(__webpack_exports__);
     socialBlock.classList.remove(`social-block--active`);
   });
 });
+
+
+/***/ }),
+
+/***/ "./source/js/modules/title-animation.js":
+/*!**********************************************!*\
+  !*** ./source/js/modules/title-animation.js ***!
+  \**********************************************/
+/*! exports provided: TitleAnimations */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TitleAnimations", function() { return TitleAnimations; });
+class TitleAnimations {
+  constructor(titles) {
+    this.titles = titles;
+    this.screenSection = document.querySelectorAll(`.screen`);
+  }
+  init() {
+    this.titles.forEach((title) => {
+      this.dissectText(title.dataset.text, title);
+    });
+  }
+
+  dissectText(title, container) {
+    container.textContent = ``;
+    const titleArray = title.split(` `);
+
+    for (let i = 0; i < titleArray.length; i++) {
+      let leters = [];
+      const span = document.createElement(`span`);
+      span.classList.add(`first-span`);
+      for (let j = 0; j < titleArray[i].length; j++) {
+        const spanLeter = document.createElement(`span`);
+        spanLeter.classList.add(`span-leter`);
+        spanLeter.style.transition = `all 0.3s cubic-bezier(0.16, 1, 0.3, 1) ${this.getRandomArbitrary(200, 500)}ms`;
+        spanLeter.textContent = `${titleArray[i][j]}`;
+        leters.push(spanLeter);
+      }
+      leters.forEach((thisSpan) => {
+        span.append(thisSpan);
+      });
+      container.append(span);
+    }
+  }
+  getRandomArbitrary(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
+  }
+}
 
 
 /***/ }),

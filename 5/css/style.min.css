@@ -1008,9 +1008,8 @@ img {
 @keyframes rulesItemFade {
   0% {
     color: transparent;
-    transform: scale(0.3); }
-  80% {
-    transform: scale(1.1); }
+    transform: scale(0.3);
+    animation-timing-function: cubic-bezier(0.6, -0.25, 0.1, 1.82); }
   100% {
     color: white;
     transform: scale(1); } }
@@ -2612,10 +2611,10 @@ img {
         min-height: calc(1.4rem * 2.2); } }
 
 .rules__item.active::before {
-  animation: rulesItemFade 0.3s ease both; }
+  animation: rulesItemFade 0.35s ease both; }
 
 .rules__item.active p {
-  animation: sliderText 0.3s ease 0.3s both; }
+  animation: sliderText 0.35s ease 0.35s both; }
 
 .rules__link {
   color: transparent;
@@ -3418,39 +3417,56 @@ img {
 .pageLoad .screen__footer {
   bottom: 0; }
 
-.intro__title span, .intro__item-title span, .intro__date span,
-.slider__title span,
-.slider__item-title span,
-.slider__date span,
-.prizes__title span,
-.prizes__item-title span,
-.prizes__date span,
-.rules__title span,
-.rules__item-title span,
-.rules__date span,
-.game__title span,
-.game__item-title span,
-.game__date span {
+.intro__title .span-leter, .intro__item-title .span-leter, .intro__date .span-leter,
+.slider__title .span-leter,
+.slider__item-title .span-leter,
+.slider__date .span-leter,
+.prizes__title .span-leter,
+.prizes__item-title .span-leter,
+.prizes__date .span-leter,
+.rules__title .span-leter,
+.rules__item-title .span-leter,
+.rules__date .span-leter,
+.game__title .span-leter,
+.game__item-title .span-leter,
+.game__date .span-leter {
   opacity: 0;
   transform: translate3d(0, 1em, 0);
   display: inline-block;
   will-change: transform; }
 
-.intro__title.active span, .intro__item-title.active span, .intro__date.active span,
-.slider__title.active span,
-.slider__item-title.active span,
-.slider__date.active span,
-.prizes__title.active span,
-.prizes__item-title.active span,
-.prizes__date.active span,
-.rules__title.active span,
-.rules__item-title.active span,
-.rules__date.active span,
-.game__title.active span,
-.game__item-title.active span,
-.game__date.active span {
+.intro__title .first-span, .intro__item-title .first-span, .intro__date .first-span,
+.slider__title .first-span,
+.slider__item-title .first-span,
+.slider__date .first-span,
+.prizes__title .first-span,
+.prizes__item-title .first-span,
+.prizes__date .first-span,
+.rules__title .first-span,
+.rules__item-title .first-span,
+.rules__date .first-span,
+.game__title .first-span,
+.game__item-title .first-span,
+.game__date .first-span {
+  overflow: hidden;
+  display: inline-block;
+  transform: none; }
+
+.intro__title.active .span-leter, .intro__item-title.active .span-leter, .intro__date.active .span-leter,
+.slider__title.active .span-leter,
+.slider__item-title.active .span-leter,
+.slider__date.active .span-leter,
+.prizes__title.active .span-leter,
+.prizes__item-title.active .span-leter,
+.prizes__date.active .span-leter,
+.rules__title.active .span-leter,
+.rules__item-title.active .span-leter,
+.rules__date.active .span-leter,
+.game__title.active .span-leter,
+.game__item-title.active .span-leter,
+.game__date.active .span-leter {
   opacity: 1;
-  transform: translate3d(0, 0, 0); }
+  transform: translate3d(0, 6px, 0); }
 
 .animate-block {
   position: absolute;
