@@ -63,3 +63,13 @@
   }
 
 }
+@keyframes sliderControlAnimation {
+  from{
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translate(0) rotate(0);
+    animation-timing-function: cubic-bezier(.6,-0.25,.25,1.79);
+  }
+}
