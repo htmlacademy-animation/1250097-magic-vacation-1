@@ -217,8 +217,18 @@
   }
 
   &.swiper-button-disabled {
-    opacity: 0.5;
+    /*opacity: 0.5;*/
     pointer-events: none;
+  }
+  &--prev {
+    transform: translateX(-3rem) rotate(-90deg);
+  }
+  &--next {
+    transform: translateX(3rem) rotate(90deg);
+  }
+  &--prev, &--next {
+    opacity: 0;
+    /*animation: sliderControlAnimation 0.5s forwards;*/
   }
 }
 
@@ -234,6 +244,7 @@
   font-weight: 400;
   font-size: 2.4rem;
   line-height: 4rem;
+  opacity: 0;
 
   @media (min-width: $stop-scaling) {
     bottom: 28px;

@@ -8,4 +8,9 @@ export default () => {
     const animate = new TitleAnimation(titles);
     animate.init();
   }
+
+  document.querySelector(`.slider__item-text`).addEventListener(`animationend`, function () {
+    document.querySelector(`.slider__controls`).classList.add(`active`);
+    document.querySelector(`.slider__pagination`).classList.add(`active`);
+  });
 };

@@ -14,8 +14,8 @@
 .slider,
 .prizes,
 .rules,
-.game{
-  &__title, &__item-title, &__date{
+.game {
+  &__title, &__item-title, &__date {
     .span-leter {
       opacity: 0;
       transform: translate3d(0, 1em, 0);
@@ -42,7 +42,8 @@
     }
   }
 }
-.animate-block{
+
+.animate-block {
   position: absolute;
   bottom: 0px;
   width: 100%;
@@ -51,10 +52,20 @@
   transition: height ease 1s;
 }
 
-#prizes.active{
+#prizes.active {
   background-color: transparent;
 }
-#prizes.active ~.animate-block{
+#prizes.active ~.animate-block {
   height: 100vh;
 }
 
+.slider__controls.active {
+  .slider__control {
+    &--prev, &--next {
+      animation: sliderControlAnimation 0.5s forwards;
+    }
+  }
+}
+.slider__pagination.active{
+  animation: fadeInSpan  0.5s forwards;
+}
