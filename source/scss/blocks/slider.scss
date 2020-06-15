@@ -220,13 +220,13 @@
     /*opacity: 0.5;*/
     pointer-events: none;
   }
-  &--prev{
-    transform: translateX(-40px) rotate(-90deg);
+  &--prev {
+    transform: translateX(-3rem) rotate(-90deg);
   }
-  &--next{
-    transform: translateX(40px) rotate(90deg);
+  &--next {
+    transform: translateX(3rem) rotate(90deg);
   }
-  &--prev, &--next{
+  &--prev, &--next {
     opacity: 0;
     /*animation: sliderControlAnimation 0.5s forwards;*/
   }

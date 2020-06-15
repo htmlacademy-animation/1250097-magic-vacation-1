@@ -10,8 +10,7 @@ export default () => {
   }
 
   document.querySelector(`.slider__item-text`).addEventListener(`animationend`, function () {
-    document.querySelector(`.slider__control--prev`).style.animation = `sliderControlAnimation 0.5s forwards`;
-    document.querySelector(`.slider__control--next`).style.animation = `sliderControlAnimation 0.5s forwards`;
-    document.querySelector(`.slider__pagination`).style.animation = `fadeInSpan  0.5s forwards`;
+    document.querySelector(`.slider__controls`).classList.add(`active`);
+    document.querySelector(`.slider__pagination`).classList.add(`active`);
   });
 };
