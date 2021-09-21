@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 350 330" style="background: black;"
+     xml:space="preserve" >
+    <defs>
+        <style>
+            @keyframes firstCloud{   
+                0%{transform: translateX(70px); opacity: 0;}
+                8%{opacity: 1;}
+                75%{opacity: 1;}
+                77% {opacity: 0}
+                100%{transform: translateX(-198px); opacity: 0;}
+            }
+            @keyframes firstCloudDownPart{
+                from{transform: translateX(0);}
+                to{transform: translateX(20px);}
+            }
+            
+            @keyframes secondCloud{
+                0%{transform: translateX(255px); opacity: 0;}
+                8%{opacity: 1;}
+                92%{opacity: 1;}
+                100%{transform: translateX(0); opacity: 0;}
+            }
+            @keyframes secondCloudDownPart{
+                from{transform: translateX(-11px);}
+                to{transform: translateX(0);}
+            }
+            .cloud_1_anim{
+                animation-name: firstCloud;
+                animation-duration: 2000ms;
+                animation-timing-function: linear;
+                animation-iteration-count: 1;
+                animation-fill-mode: none ;
+            }
+            .cloud_1_2_anim{
+                animation-name: firstCloudDownPart;
+                animation-duration: 2000ms;
+                animation-timing-function: linear;
+                animation-iteration-count: 1;
+                animation-fill-mode: none ;
+            }
+            .cloud_2_anim {
+                animation-name: secondCloud;
+                animation-duration: 2000ms;
+                animation-timing-function: linear;
+                animation-iteration-count: 1;
+                animation-fill-mode: none ;
+            }
+            .cloud_2_2_anim{
+                animation-name: secondCloudDownPart;
+                animation-duration: 2000ms;
+                animation-timing-function: linear;
+                animation-iteration-count: 1;
+                animation-fill-mode: none ;
+            }
+            
+        </style>
+        
+    </defs>
+    <g id="first-animation">
+        <g id="dirigible">
+            <animate
+                begin="2500ms"
+                attributeType="CSS"
+                attributeName="opacity"
+                from="1"
+                to="0"
+                fill="freeze"
+                dur="500ms"
+                calcMode="spline"
+                keySplines="0.33 0 0.67 1"
+        />
+            <g id="cabin" style="transform-origin: center;">
+                <animateTransform
+                        attributeName="transform"
+                        type="translate"
+                        values="0, 2.5; 0, 0; 0, 2.5;"
+                        dur="1000ms"
+                        fill="freeze"
+                        repeatDur="4000ms"
+                        repeatCount="indefinite"
+                />
+                    <animateTransform
+                            attributeName="transform"
+                            type="scale"
+                            values="1, 0.95; 1; 1, 0.95"
+                            dur="1000ms"
+                            fill="freeze"
+                            repeatDur="4000ms"
+                            repeatCount="indefinite"
+                            additive="sum"
+                    />
+
+                    <animateTransform
+                            attributeName="transform"
+                            type="skewX"
+                            values="4; 0; 4"
+                            dur="1000ms"
+                            fill="freeze"
+                            repeatDur="4000ms"
+                            repeatCount="indefinite"
+                            additive="sum"
+                    />
+                <path style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                      d="M175.4,249.3h48.4c6.3,0,11.7-4.5,13-10.7l3.7-18.3h-68.2v25.9C172.4,247.9,173.7,249.3,175.4,249.3z"/>
+                <path style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" d="M235.8,241.7h-9.2
+                    c-4.6,0-8.3-3.7-8.3-8.3v-13.1"/>
+
+                <path id="window_2"
+                      style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                      d="
+                M204.2,231.9h-2.1c-1.9,0-3.4,1.5-3.4,3.4v2.9c0,1.9,1.5,3.4,3.4,3.4h2.1c1.9,0,3.4-1.5,3.4-3.4v-2.9
+                C207.7,233.4,206.1,231.9,204.2,231.9z">
+                    <animate
+                        begin="2433ms"
+                        attributeType="CSS"
+                        attributeName="opacity"
+                        from="1"
+                        to="0"
+                        fill="freeze"
+                        dur="67ms"
+                        calcMode="linear"
+                />
+                </path>
+
+                <path id="window_1"
+                      style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                      d="M185.6,231.9h-2.1c-1.9,0-3.4,1.5-3.4,3.4v2.9c0,1.9,1.5,3.4,3.4,3.4h2.1c1.9,0,3.4-1.5,3.4-3.4v-2.9
+                            C189.1,233.4,187.5,231.9,185.6,231.9z"/>
+            </g>
+            <g id="tail-bottom">
+                <path style="fill:#068E4D;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                   d="M123.2,173.3h9.2c1.8,0,3.3,1.5,3.3,3.3v5.7c0,1.8-1.5,3.3-3.3,3.3h-16.8c-0.7,0-1.3-0.6-1.3-1.3v-2
+                    C114.2,177.4,118.3,173.3,123.2,173.3z"/>
+                <path style="fill:#068E4D;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                      d="M123.2,207.4h9.2c1.8,0,3.3-1.5,3.3-3.3v-5.7c0-1.8-1.5-3.3-3.3-3.3h-16.8c-0.7,0-1.3,0.6-1.3,1.3v2
+                    C114.2,203.4,118.3,207.4,123.2,207.4z"/>
+                <animateTransform
+                        attributeName="transform"
+                        type="translate"
+                        values="0, 2.5; 0, -2.5; 0, 2.5"
+                        dur="2000ms"
+                        calcMode="spline"
+                        keySplines="0.6  0  0.4  1;
+                                    0.6  0  0.4  1"
+                        fill="freeze"
+                        repeatCount="2"
+                />
+        </g>
+            <g id="baloon">
+                <path id="backStroke" style="fill:#068E4D;stroke:#FFFFFF;stroke-width:2;" d="M205,227.1c43.4,0,74.9-15.5,74.9-37
+                    c0-21.4-31.5-37-74.9-37c-27.9,0-55.4,13.5-73.5,24.9c-4.2,2.6-6.7,7.1-6.7,12.1c0,5,2.5,9.5,6.7,12.1
+                    C149.6,213.5,177.1,227.1,205,227.1z"/>
+                <path style="fill:#36E69A;"
+                      d="M205,184.1c-28.2,0-56.1-2.2-72.8,2c-3.9,1-6,2.7-6.1,4.3c-0.1-4.4,1.9-8.8,6.1-11.4     c16.7-10.5,44.6-24.7,72.8-24.7c44.8,0,73.6,16,73.6,35.7c0,0.1,0,0.2,0,0.4C278.3,182.5,249.5,184.1,205,184.1z"/>
+                <path style="fill:#068E4D;" d="M132.2,195.1c16.7,4.3,44.6,10,72.8,10c44.1,0,72.7-6.3,73.6-14.2c-0.9,19.3-29.5,34.9-73.6,34.9
+                    c-28.2,0-56.1-14.2-72.8-24.7c-3.8-2.4-5.8-6.2-6-10.2C126.4,192.6,128.4,194.2,132.2,195.1z"/>
+                <path style="fill:#25B774;" d="M132.2,186.1c16.7-4.3,44.6-10,72.8-10c44.5,0,73.3,6.4,73.6,14.4c0,0.2,0,0.3,0,0.5
+                    c-0.9,7.9-29.5,14.2-73.6,14.2c-28.2,0-56.1-5.8-72.8-10c-3.8-1-5.8-2.5-6-4.1c0-0.2,0-0.3,0-0.5
+                    C126.2,188.8,128.2,187.1,132.2,186.1z">
+                <animate attributeName="d"
+                         values="M 132.2 185.1 C 148.9 180.8 176.8 171.1 205 171.1 C 249.5 171.1 278.6 179.5 278.6 190.5 C 
+                         278.6 190.7 278.6 190.8 278.6 191 C 277.7 198.9 249.1 203.2 205 203.2 C 176.8 203.2 148.9 199.4 132.2 
+                         195.2 C 128.4 194.2 126.4 192.7 126.2 191.1 C 126.2 190.9 126.2 190.8 126.2 190.6 C 126.2 188.8 128.2 
+                         186.1 132.2 185.1 Z;
+                         M 132.2 186.1 C 148.9 181.8 176.8 179.1 205 179.1 C 249.5 179.1 278.3 182.5 278.6 190.5 C 278.6 190.7 
+                         278.6 190.8 278.6 191 C 277.7 198.9 249.1 210.2 205 210.2 C 176.8 210.2 148.9 199.4 132.2 195.2 C 
+                         128.4 194.2 126.4 192.7 126.2 191.1 C 126.2 190.9 126.2 190.8 126.2 190.6 C 126.2 188.8 128.2 187.1 
+                         132.2 186.1 Z;
+                         M 132.2 185.1 C 148.9 180.8 176.8 171.1 205 171.1 C 249.5 171.1 278.6 179.5 278.6 190.5 C 
+                         278.6 190.7 278.6 190.8 278.6 191 C 277.7 198.9 249.1 203.2 205 203.2 C 176.8 203.2 148.9 199.4 132.2 
+                         195.2 C 128.4 194.2 126.4 192.7 126.2 191.1 C 126.2 190.9 126.2 190.8 126.2 190.6 C 126.2 188.8 128.2 
+                         186.1 132.2 185.1 Z;"
+                         dur="2000ms"
+                         repeatCount="2"
+                         calcMode="spline"
+                         keySplines="0.6  0  0.4  1;
+                                    0.6  0  0.4  1"
+
+                />
+            </path>
+            
+        </g>
+            <g id="tail-top">
+                <path style="fill:#068E4D;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                      d="M123.2,173.3h9.2c1.8,0,3.3,1.5,3.3,3.3v5.7c0,1.8-1.5,3.3-3.3,3.3h-16.8c-0.7,0-1.3-0.6-1.3-1.3v-2
+                    C114.2,177.4,118.3,173.3,123.2,173.3z"/>
+                <path style="fill:#068E4D;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                      d="M123.2,207.4h9.2c1.8,0,3.3-1.5,3.3-3.3v-5.7c0-1.8-1.5-3.3-3.3-3.3h-16.8c-0.7,0-1.3,0.6-1.3,1.3v2
+                    C114.2,203.4,118.3,207.4,123.2,207.4z"/>
+                <animateTransform
+                        attributeName="transform"
+                        type="translate"
+                        values="0, -2.5; 0, 2.5; 0, -2.5"
+                        dur="2000ms"
+                        calcMode="spline"
+                        keySplines="0.6  0  0.4  1;
+                                    0.6  0  0.4  1"
+                        fill="freeze"
+                        repeatCount="2"
+                />
+        </g>
+            <g id="tracks">
+                <path style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10; stroke-dasharray: 23px;"
+                      d="M106.3,179.5H84.1">
+                    <animate id="track_top"
+                             attributeType="CSS"
+                             attributeName="stroke-dasharray"
+                             values="23; 17; 23"
+                             fill="freeze"
+                             begin="60ms; track_top.end + 40ms"
+                             dur="119ms"
+                             calcMode="paced"
+                             repeatCount="indefinite"
+                    />
+                </path>
+                <path style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10; stroke-dasharray: 23px;"
+                      d="M106.3,201.2H84.1">
+                     <animate id="track_bottom"
+                              attributeType="CSS"
+                              attributeName="stroke-dasharray"
+                              values="23; 19; 23"
+                              fill="freeze"
+                              begin="40ms; track_bottom.end + 40ms"
+                              dur="119ms"
+                              calcMode="paced"
+                              repeatCount="indefinite"
+                     />
+                </path>
+                <path style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10; stroke-dasharray: 38px;"
+                      d="M106.3,191H68.8">
+                    <animate id="track_middle"
+                             attributeType="CSS"
+                             attributeName="stroke-dasharray"
+                             values="38; 32; 38"
+                             fill="freeze"
+                             dur="180ms"
+                             calcMode="paced"
+                             repeatCount="indefinite"
+                    />
+                </path>
+             </g>
+         </g>
+        
+        <g id="clouds">
+            <g id="cloud_1" style="opacity: 0; " class="">
+                <g id="clouds_1_top">
+                    <path style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" d="M278.8,82.9h-27.4
+                        c0-6.9-5.5-12.4-12.4-12.4c-6.9,0-12.4,5.6-12.4,12.4h-17.9"/>
+                    <path style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;"
+                          d="M287,82.9h22.2"/>
+                </g>
+
+                <path id="cloud_1_2" class="" style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10; 
+                "
+                      d="M259,93.2h39.8">
+                       
+                </path>
+            </g>
+            
+            <g id="cloud_2" class="" style="opacity: 0;  ">
+                <path style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;"
+                      d="M41.8,97.5h35.3 c0-6.9,5.5-12.4,12.4-12.4c6.9,0,12.4,5.6,12.4,12.4h17.9">
+                </path>
+                <path id="cloud_2_2" class="" style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;
+                   "
+                    d="M69,107.8h62.9">
+                </path>
+            </g>
+            <animateTransform
+                   attributeName="transform"
+                   type="scale"
+                   from="1"
+                   to="0.5"
+                   keyTimes="0;  1"
+                   dur="1ms"
+                   begin="3000ms"
+                   fill="freeze"
+                   additive="sum"
+           />
+           <animateTransform
+                   id="animate"
+                   attributeName="transform"
+                   type="translate"
+                   values="0,0;360, 270"
+                   keyTimes="0;  1"
+                   dur="1ms"
+                   begin="3000ms"
+                   fill="freeze"
+                   additive="sum"
+           />
+            
+            
+        </g>
+
+        <rect style="opacity: 0;"  x="0" y="0" width="100%" height="100%" fill="#000" mask="url(#mask-1)">
+            <animate
+                    begin="2960ms"
+                    attributeType="CSS"
+                    attributeName="opacity"
+                    from="0"
+                    to="1"
+                    fill="freeze"
+                    dur="10ms"
+                    calcMode="linear"
+            />
+        </rect>
+        <rect  x="199" y="232" width="9" height="10" stroke="white" rx="4" stroke-width="2" style="opacity: 0;"
+              fill="transparent">
+            
+             <animate
+                     begin="2467ms"
+                     attributeType="CSS"
+                     attributeName="opacity"
+                     from="0"
+                     to="1"
+                     fill="freeze"
+                     dur="500ms"
+                     calcMode="linear"
+             />
+            <animateTransform
+                    begin="2467ms"
+                    attributeName="transform"
+                    type="translate"
+                    values="0, 0; 41, -80"
+                    dur="500ms"
+                    fill="freeze"
+                    calcMode="linear"
+                    additive="sum"
+            />
+            <animate
+                    begin="2467ms"
+                    attributeType="CSS"
+                    attributeName="width"
+                    from="9"
+                    to="43"
+                    fill="freeze"
+                    dur="500ms"
+                    calcMode="linear"
+                    additive="sum"
+            />
+            <animate
+                    begin="2467ms"
+                    attributeType="CSS"
+                    attributeName="height"
+                    from="10"
+                    to="63"
+                    fill="freeze"
+                    dur="500ms"
+                    calcMode="linear"
+                    additive="sum"
+            />
+            <animate
+                    begin="2467ms"
+                    attributeType="CSS"
+                    attributeName="rx"
+                    from="4"
+                    to="12"
+                    fill="freeze"
+                    dur="500ms"
+                    calcMode="linear"
+                    additive="sum"
+            />
+            
+        </rect>
+        <defs style="background: blanchedalmond;fill: bisque;border: aqua;border: 1px solid #000;">
+            <mask id="mask-1" x="0" y="0" width="100" height="100">
+            <rect id="main-rect" x="0" y="0" width="100%" height="100%" fill="#000"/>
+            <rect id="main-rect-inverted" x="0" y="0" width="100%" height="100%" fill="#fff"/>
+
+            <rect x="241" y="153" width="50" height="70" stroke="white" rx="4" stroke-width="2"
+                  fill="#000"/>
+
+            <rect id="bottom-rect" x="0" y="60" width="100" height="40" fill="#000" style="opacity: 0;"/>
+        </mask>
+        </defs>
+
+       
+        <g id="ground">
+    <path id="mountain" style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" d="M289.9,327.9
+            h-45.1l-32.1-31.3c-0.6-0.6-1.8-0.6-2.4,0l-10.2,10.2c-0.5,0.6-1.7,0.5-2.2,0l-19-20.2c-0.7-0.8-2.3-0.8-3.1,0l-26.4,25.6
+            c-0.6,0.6-1.7,0.5-2.2,0l-2.6-2.9c-0.5-0.6-1.8-0.6-2.3,0L124.6,329H80.8">
+            <animate attributeName="d"
+                     values="M 80.8 329 L 124.6 329 L 142.3 309.3 C 142.8 308.7 144.1 308.7 144.6 309.3 L 147.2 312.2 C 
+                     147.7 312.7 148.8 312.8 149.4 312.2 L 175.8 286.6 C 176.6 285.8 178.2 285.8 178.9 286.6 L 197.9 306.8 
+                     C 198.4 307.3 199.6 307.4 200.1 306.8 L 210.3 296.6 C 210.9 296 212.1 296 212.7 296.6 L 244.8 327.9 L 289.9 327.9;
+                     M 72 329 L 89.192 329 L 106.385 329 C 112.115 329 117.846 329 123.577 329 L 140.769 329 C 146.5 
+                     329 152.231 329 157.962 329 L 175.154 329 C 180.885 329 186.615 329 192.346 329 L 209.538 329 C 
+                     215.269 329 221 329 226.731 329 L 243.923 329 C 249.654 329 255.385 329 261.115 329 L 278.308 329 
+                     L 295.5 329;"
+                     begin="2500ms"
+                     dur="467ms"
+                     repeatCount="1"
+                     calcMode="spline"
+                     keySplines=".42 0 .58 1"
+                     fill="freeze"
+
+            />
+           
+        </path>
+    </g>
+    </g>
+    <g id="second" >
+        <g id="skies" style="opacity: 0;">
+            <animateTransform
+                    begin="2733ms"
+                    attributeName="transform"
+                    type="translate"
+                    values="-150; 0 "
+                    dur="467ms"
+                    fill="freeze"
+                    calcMode="spline"
+                    keySplines="0.33, 0, 0, 1"
+            />
+            <animate
+                    begin="2900ms"
+                    attributeType="CSS"
+                    attributeName="opacity"
+                    from="0"
+                    to="1"
+                    fill="freeze"
+                    dur="300ms"
+                    calcMode="spline"
+                    keySplines="0.33, 0, 0, 1"
+                    additive="sum"
+            />
+            <path style="fill:#FFFFFF;" d="M91.1,327.8c-1.2-0.1-2.1-1.1-2-2.4l13.7-193.2c1.1-15.5-4.8-21.9-8.7-24.5c-1-0.7-0.7-2.2,0.5-2.4
+		c8.5-1.4,27.6-1.3,25.5,28.8l-13.6,192.5c-0.1,1.2-1.1,2.1-2.3,2L91.1,327.8z"/>
+            <path style="fill:#FFFFFF;" d="M124.5,328.2c-1.2,0-2.2-1-2.2-2.2l2.2-193.6c0.2-15.5-6.1-21.6-10.2-23.9c-1.1-0.6-0.8-2.2,0.4-2.5
+		c8.4-1.9,27.5-3,27.1,27.3l-2.2,192.9c0,1.2-1,2.2-2.2,2.2L124.5,328.2z"/>
+</g>
+        <g id="armchair" style="opacity: 0">
+             <animateTransform
+                     begin="2733ms"
+                     attributeName="transform"
+                     type="translate"
+                     values="-140, 0; 0, 0"
+                     dur="467ms"
+                     fill="freeze"
+                     calcMode="linear"
+             />
+            <animate
+                    begin="2733ms"
+                    attributeType="CSS"
+                    attributeName="opacity"
+                    from="0"
+                    to="1"
+                    fill="freeze"
+                    dur="467ms"
+                    calcMode="spline"
+                    keySplines="0.33  0  0  1"
+                    additive="sum"
+            />
+            <g>
+		<path style="fill:#A67EE5;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;" d="M257.5,259.8h-60.7v-14.2h55.1
+			c5.5,0,9.9,4.5,9.9,9.9C261.7,257.9,259.8,259.8,257.5,259.8z"/>
+                <path style="fill:#A67EE5;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;"
+                      d="M185.5,328.3h-14l-6.3-41.6h14L185.5,328.3z"
+                />
+                <path style="fill:#A67EE5;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;"
+                      d="M235,328.3h-14l-6.3-41.6h14L235,328.3z"/>
+                <path style="fill:#A67EE5;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;" d="M281.3,272.5h-55.9c-2.8,0-5.1-2-5.5-4.8
+			l-10.9-72.2c4.2-3.5,6.7-8.9,6.3-14.9c-0.6-8.7-7.7-15.8-16.4-16.4c-0.8-0.1-1.6-0.1-2.4,0h-55.1L141.2,267l15.8,23.4l47.2,8.4
+			c1.3,0.5,2.7,0.8,4.2,0.8h16.3h56.6c7.5,0,13.5-6.1,13.5-13.5C294.8,278.5,288.8,272.5,281.3,272.5z"/>
+                <path style="fill:#A67EE5;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;" d="M162.4,267.7l-10.9-72.2
+			c4.2-3.5,6.7-8.9,6.3-14.9c-0.6-8.7-7.7-15.8-16.4-16.4c-10.3-0.7-18.9,7.5-18.9,17.7c0,1.8,0.3,3.6,0.8,5.3L138.6,289
+			c0.9,6.1,6.1,10.5,12.2,10.5h16.3h56.6c7.5,0,13.5-6.1,13.5-13.5c0-7.5-6-13.5-13.5-13.5h-55.9
+			C165.2,272.5,162.8,270.4,162.4,267.7z"/>
+                <path style="fill:#A67EE5;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;" d="M206.3,259.8h-72l-2.1-14.2h68.5
+			c5.5,0,9.9,4.5,9.9,9.9C210.5,257.9,208.6,259.8,206.3,259.8z"/>
+                <path style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;"
+                      d="M151.6,195.4h57.5"/>
+	</g>
+</g>
+        <g id="leaf" style="opacity: 0; transform-origin: 150px 330px;">
+            <animateTransform
+                    begin="2733ms"
+                    attributeName="transform"
+                    type="rotate"
+                    values="-6.4; 5; -2.5; 1.2; 0 "
+                    dur="1533ms"
+                    fill="freeze"
+                    calcMode="spline"
+                    keySplines="0.33, 0, 0.67, 1; 
+                                0.33, 0, 0.67, 1;
+                                0.33, 0, 0.67, 1;
+                                0.33, 0, 0.67, 1"
+            />
+            <animate
+                    begin="2833ms"
+                    attributeType="CSS"
+                    attributeName="opacity"
+                    from="0"
+                    to="1"
+                    fill="freeze"
+                    dur="367ms"
+                    calcMode="spline"
+                    keySplines="0.33, 0, 0.67, 1"
+                    additive="sum"
+            />
+            <g>
+		<path style="fill:#36E69A;" d="M79.2,194c10.4,13.8,15.6,27,15.6,26.9c0,0-9.9-10-20.1-23.6c-10.2-13.6-17.1-25.9-17.1-25.9
+			C57.6,171.5,68.9,180.2,79.2,194z"/>
+                <path style="fill:#36E69A;" d="M80.9,214.4c13.7,9.5,22.8,20.5,22.8,20.5c0,0-12.3-6.3-25.8-15.7c-13.5-9.5-23.4-18.7-23.4-18.7
+			C54.5,200.5,67.2,204.8,80.9,214.4z"/>
+                <path style="fill:#36E69A;" d="M93.7,205.5c4.6,16.5,10.1,29.4,10.1,29.4c0,0,0.1-13.8-4.5-30.5c-4.6-16.7-12.1-29.5-12.1-29.4
+			C87.2,174.9,89.1,189,93.7,205.5z"/>
+                <path style="fill:#25B774;" d="M107.3,213.5c0.1,16.9,2.1,30.7,2.1,30.7c0,0,3.8-13,3.8-30.1c0-17-4-31.4-4-31.4
+			C109.2,182.8,107.3,196.6,107.3,213.5z"/>
+                <path style="fill:#25B774;" d="M83.1,229.6c15.2,6,26.3,14.7,26.3,14.6c0,0-13.2-3.2-28.2-9.2c-15-6.1-26.4-12.7-26.4-12.7
+			C54.8,222.3,67.9,223.5,83.1,229.6z"/>
+                <path style="fill:#25B774;" d="M88.1,243.8c15.6,4.1,27.6,11.2,27.6,11.2c0,0-13.3-1.5-28.8-5.6c-15.5-4.2-27.4-9.3-27.4-9.3
+			C59.4,240.1,72.5,239.7,88.1,243.8z"/>
+                <path style="fill:#25B774;" d="M118.7,224.8c-2.8,16.5-3.1,30.2-3.1,30.2c0,0,5.9-12,8.8-28.5c2.9-16.5,1.4-31.2,1.4-31.2
+			C125.8,195.3,121.5,208.3,118.7,224.8z"/>
+                <path style="fill:#068E4D;" d="M98.9,262c15.4,4.7,27.1,12.4,27.1,12.3c0,0-13.2-2-28.5-6.8c-15.3-4.8-27-10.4-27-10.5
+			C70.4,257.2,83.5,257.3,98.9,262z"/>
+                <path style="fill:#068E4D;" d="M130.3,244.3c-3.4,16.3-4.3,30.1-4.3,30.1c0,0,6.4-11.7,10-28.2c3.6-16.4,2.7-31.1,2.7-31.1
+			C138.6,215.1,133.7,228,130.3,244.3z"/>
+                <path style="fill:#068E4D;" d="M108.9,280.7c15.2,5.3,26.6,13.5,26.5,13.5c0,0-13.1-2.6-28.2-8c-15.1-5.4-26.5-11.6-26.6-11.6
+			C80.7,274.6,93.7,275.3,108.9,280.7z"/>
+                <path style="fill:#068E4D;" d="M141,264.3c-4.1,16.2-5.6,29.9-5.6,29.9c0,0,6.9-11.5,11.1-27.7c4.3-16.2,4-31,4-31
+			C150.6,235.5,145.2,248.1,141,264.3z"/>
+                <path style="fill:none;stroke:#36E69A;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                      d="
+			M92.6,217.7c23.2,34.4,42.3,71.4,56.9,110.4"/>
+	</g>
+</g>
+       
+    </g>
+    <script>
+            const cloud_2 = [document.querySelector("#cloud_2"), document.querySelector("#cloud_2_2")];
+            const cloud_2_class = ["cloud_2_anim", "cloud_2_2_anim"];
+            const cloud_1 = [document.querySelector("#cloud_1"), document.querySelector("#cloud_1_2")];
+            const cloud_1_class = ["cloud_1_anim", "cloud_1_2_anim"];
+            function addAnimationClass (elements, classes) {
+                elements.map((element, i)=>{
+                    element.classList.add(classes[i]);
+                })
+            }
+            function removeAnimationClass (elements, classes) {
+                elements.map((element, i)=>{
+                    element.classList.remove(classes[i]);
+                })
+            }
+            setTimeout(addAnimationClass, 33, cloud_2, cloud_2_class);
+            setTimeout(addAnimationClass, 1467, cloud_1, cloud_1_class);
+            setTimeout(removeAnimationClass, 2033, cloud_2, cloud_2_class);
+            setTimeout(removeAnimationClass, 3467, cloud_1, cloud_1_class);
+            setTimeout(addAnimationClass, 3000, cloud_2, cloud_2_class);
+            setTimeout(addAnimationClass, 4434, cloud_1, cloud_1_class);
+            console.log(cloud_2)
+    </script>
+</svg>
