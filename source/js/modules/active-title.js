@@ -1,4 +1,4 @@
-const imagesSrc = ['/img/module-3/img/primary-award-from-done.svg', '/img/prize2.svg', '/img/prize3.svg'];
+const imagesSrc = ['img/module-3/img/primary-award-from-done.svg', 'img/prize2.svg', 'img/prize3.svg'];
 const containerImages = document.querySelectorAll('.prizes__icon img');
 
 export const titles = document.querySelectorAll(`[data-text]`);
