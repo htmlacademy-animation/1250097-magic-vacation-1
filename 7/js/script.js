@@ -10265,10 +10265,9 @@ module.exports = code;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "titles", function() { return titles; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerDivision", function() { return headerDivision; });
-/* harmony import */ var _imageInsert__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./imageInsert */ "./source/js/modules/imageInsert.js");
-
 const imagesSrc = ['/img/module-3/img/primary-award-from-done.svg', '/img/prize2.svg', '/img/prize3.svg'];
 const containerImages = document.querySelectorAll('.prizes__icon img');
+
 const titles = document.querySelectorAll(`[data-text]`);
 function headerDivision() {
   const screenSections = document.querySelectorAll(`.screen`); // все области
@@ -10279,10 +10278,15 @@ function getvisibleArea(areas) {
     if (!section.classList.contains(`screen--hidden`)) { // 1. определить видимую секцию
       getAnimateTitle(section);
       if(section.id ==='prizes'){
-        Object(_imageInsert__WEBPACK_IMPORTED_MODULE_0__["default"])(imagesSrc, containerImages);
+        replaceIcon();
       }
     }
   });
+}
+function replaceIcon () {
+  for(let i = 0; i<containerImages.length; i++){
+    containerImages[i].src = `${imagesSrc[i]}`
+  }
 }
 function getAnimateTitle(area) {
   titles.forEach((title) => {
@@ -10620,25 +10624,6 @@ class FullPageScroll {
     }
   }
 }
-
-
-/***/ }),
-
-/***/ "./source/js/modules/imageInsert.js":
-/*!******************************************!*\
-  !*** ./source/js/modules/imageInsert.js ***!
-  \******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-﻿function replaceIcon (newIcons, oldIcons ) {
-  for(let i = 0; i<oldIcons.length; i++){
-    oldIcons[i].src = `${newIcons[i]}`
-  }
-}
-/* harmony default export */ __webpack_exports__["default"] = (replaceIcon);
 
 
 /***/ }),
