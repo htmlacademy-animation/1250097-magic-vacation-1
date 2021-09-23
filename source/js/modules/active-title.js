@@ -1,3 +1,6 @@
+import replaceIcon from './imageInsert';
+const imagesSrc = ['/img/module-3/img/primary-award-from-done.svg', '/img/prize2.svg', '/img/prize3.svg'];
+const containerImages = document.querySelectorAll('.prizes__icon img');
 export const titles = document.querySelectorAll(`[data-text]`);
 export function headerDivision() {
   const screenSections = document.querySelectorAll(`.screen`); // все области
@@ -7,6 +10,9 @@ function getvisibleArea(areas) {
   areas.forEach((section) => {
     if (!section.classList.contains(`screen--hidden`)) { // 1. определить видимую секцию
       getAnimateTitle(section);
+      if(section.id ==='prizes'){
+        replaceIcon(imagesSrc, containerImages);
+      }
     }
   });
 }
