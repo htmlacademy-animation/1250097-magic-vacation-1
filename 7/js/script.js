@@ -10265,7 +10265,7 @@ module.exports = code;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "titles", function() { return titles; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerDivision", function() { return headerDivision; });
-const imagesSrc = ['/img/module-3/img/primary-award-from-done.svg', '/img/prize2.svg', '/img/prize3.svg'];
+const imagesSrc = ['img/module-3/img/primary-award-from-done.svg', 'img/prize2.svg', 'img/prize3.svg'];
 const containerImages = document.querySelectorAll('.prizes__icon img');
 
 const titles = document.querySelectorAll(`[data-text]`);
